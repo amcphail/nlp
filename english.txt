@@ -1,0 +1,427 @@
+% Proper nouns
+Viv		=	np(three,sing,C)		: Vivian;
+Ann		=	np(three,sing,C)		: Ann;
+Rich		=	np(three,sing,C)		: Richard;
+Jon		=	np(three,sing,C)		: Jonathan;
+% Pronouns
+I		=	np(one,sing,subj)		: i;
+me		=	np(one,sing,obj)		: me;
+we		=	np(one,plu,subj)		: we;
+us		=	np(one,plu,obj)			: us;
+you		=	np(two,N,C)			: you;
+he		=	np(three,sing,subj)		: he;
+she		=	np(three,sing,subj)		: she;
+it		=	np(three,sing,C)		: it;
+him		=	np(three,sing,obj)		: him;
+her		=	np(three,sing,obj)		: her;
+they		=	np(three,plu,subj)		: they;
+then		=	np(three,plu,obj)		: them;
+% nouns
+kid		=	n(sing)				: kid;
+kids		=	n(plu)				: kids;
+man		=	n(sing)				: man;
+men		=	n(plu)				: men;
+cow		=	n(sing)				: cow;
+cows		=	n(plu)				: cows;
+horse		=	n(sing)				: horse;
+horses		=	n(plu)				: horses;
+dog		=	n(sing)				: dog;
+dogs		=	n(plu)				: dogs;
+cat		=	n(sing)				: cat;
+cats		=	n(plu)				: cats;
+sheep		=	n(N)				: sheep;
+fish		=	n(N)				: fish;
+game		=	n(N)				: game;
+tree		=	n(sing)				: tree;
+trees		=	n(plu)				: trees;
+field		=	n(sing)				: field;
+fields		=	n(plu)				: fields;
+bucket		=	n(sing)				: bucket;
+buckets		=	n(plu)				: buckets;
+cigarette	=	n(sing)				: cigarette;
+cigarettes	=	n(plu)				: cigarettes;
+bread		=	n(sing)				: bread;
+cake		=	n(sing)				: cake;
+cakes		=	n(plu)				: cake;
+chalk		=	n(sing)				: chalk;
+cheese		=	n(sing)				: cheese;
+barn		=	n(sing)				: barn;
+animal		=	n(sing)				: animal;
+animals		=	n(plu)				: animals;
+prince		=	n(sing)				: prince;
+princes		=	n(plu)				: princes;
+house		=	n(sing)				: house;
+houses		=	n(plu)				: houses;
+home		=	n(sing)				: home;
+% adjectives
+red		=	(n(N)/n(N))			: ^x.red x; 
+blue		=	(n(N)/n(N))			: ^x.blue x;
+yellow		=	(n(N)/n(N))			: ^x.yellow x;
+fast		=	(n(N)/n(N))			: ^x.fast x;
+slow		=	(n(N)/n(N))			: ^x.slow x;
+dangerous	=	(n(N)/n(N))			: ^x.dangerous x;
+sad		=	(n(N)/n(N))			: ^x.sad x;
+happy		=	(n(N)/n(N))			: ^x.happy x;
+fun		=	(n(N)/n(N))			: ^x.fun x;
+%
+alive		=	np(P,N,C)			: alive;
+% intensifiers
+very		=	((n(N)/n(N))/(n(N)/n(N)))	: ^x y.very (x y);
+quite		=	((n(N)/n(N))/(n(N)/n(N)))	: ^x y.quite (x y);
+% adverbs
+probably	=	((s(V)\np(P,N,C))/(s(V)\np(P,N,C)))	: ^x y.probably (x y);
+willingly	=	((s(V)\np(P,N,C))/(s(V)\np(P,N,C)))	: ^x y.willingly (x y);
+slowly		=	((s(V)\np(P,N,C))/(s(V)\np(P,N,C)))	: ^x y.slowly (x y);
+yesterday	=	((s(V)\np(P,N,C))\(s(V)\np(P,N,C)))	: ^x y.probably (x y);
+willingly	=	((s(V)\np(P,N,C))\(s(V)\np(P,N,C)))	: ^x y.willingly (x y);
+slowly		=	((s(V)\np(P,N,C))\(s(V)\np(P,N,C)))	: ^x y.slowly (x y);
+skillfully	=	((s(V)\np(P,N,C))\(s(V)\np(P,N,C)))	: ^x y.skillfully (x y);
+% Possessive pronouns
+my		=	(np(three,N,C)/n(N))		: ^x.my x;
+your		=	(np(three,N,C)/n(N))		: ^x.your x;
+his		=	(np(three,N,C)/n(N))		: ^x.his x;
+her		=	(np(three,N,C)/n(N))		: ^x.her x;
+their		=	(np(three,N,C)/n(N))		: ^x.their x;
+% determiners
+a		=	(np(three,sing,C)/n(sing))	: ^x.a x;
+the		=	(np(three,N,C)/n(N))		: ^x.the x;
+some		=	(np(three,sing,C)/n(sing))	: ^x.some x;
+many		=	(np(three,plu,C)/n(plu))	: ^x.many x;
+every		=	(np(three,sing,C)/n(sing))	: ^x.every x;
+most		=	(np(three,plu,C)/n(plu))	: ^x.most x;
+one		=	(np(three,sing,C)/n(sing))	: ^x.one x;
+two		=	(np(three,plu,C)/n(plu))	: ^x.two x;
+three		=	(np(three,plu,C)/n(plu))	: ^x.three x;
+% intransitive verbs
+%   cry
+cry		=	(s(bse)\np(P,N,subj))		: ^x.cry x;
+cries		=	(s(fin)\np(three,sing,subj))	: ^x.cry x;
+cry		=	(s(fin)\np(two,N,subj))		: ^x.cry x;
+cry		=	(s(fin)\np(one,N,subj))		: ^x.cry x;
+cry		=	(s(fin)\np(P,plu,subj))		: ^x.cry x;
+crying		=	(s(pred)\np(P,N,subj))		: ^x.ing(cry x);
+cried		=	(s(perf)\np(P,N,subj))		: ^x.did(cry x);
+%   sneeze
+sneeze		=	(s(bse)\np(P,N,subj))		: ^x.sneeze x;
+sneezes		=	(s(fin)\np(three,sing,subj))	: ^x.sneeze x;
+sneeze		=	(s(fin)\np(two,N,subj))		: ^x.sneeze x;
+sneeze		=	(s(fin)\np(one,N,subj))		: ^x.sneeze x;
+sneeze		=	(s(fin)\np(P,plu,subj))		: ^x.sneeze x;
+sneezing	=	(s(pred)\np(P,N,subj))		: ^x.ing(sneeze x);
+sneezed		=	(s(perf)\np(P,N,subj))		: ^x.did(sneeze x);
+%   run
+run		=	(s(bse)\np(P,N,subj))		: ^x.run x;
+runs		=	(s(fin)\np(three,sing,subj))	: ^x.run x;
+run		=	(s(fin)\np(two,N,subj))		: ^x.run x;
+run		=	(s(fin)\np(one,N,subj))		: ^x.run x;
+run		=	(s(fin)\np(P,plu,subj))		: ^x.run x;
+running		=	(s(pred)\np(P,N,subj))		: ^x.ing(run x);
+ran		=	(s(perf)\np(P,N,subj))		: ^x.did(run x);
+%   sing
+sing		=	(s(bse)\np(P,N,subj))		: ^x.sing x;
+sings		=	(s(fin)\np(three,sing,subj))	: ^x.sing x;
+sing		=	(s(fin)\np(two,N,subj))		: ^x.sing x;
+sing		=	(s(fin)\np(one,N,subj))		: ^x.sing x;
+sing		=	(s(fin)\np(P,plu,subj))		: ^x.sing x;
+singing		=	(s(pred)\np(P,N,subj))		: ^x.ing(sing x);
+sung		=	(s(perf)\np(P,N,subj))		: ^x.was(sing x);
+%   play
+play		=	(s(bse)\np(P,N,subj))		: ^x.play x;
+plays		=	(s(fin)\np(three,sing,subj))	: ^x.play x;
+play		=	(s(fin)\np(two,N,subj))		: ^x.plays x;
+play		=	(s(fin)\np(one,N,subj))		: ^x.plays x;
+play		=	(s(fin)\np(P,plu,subj))		: ^x.plays x;
+playing		=	(s(pred)\np(P,N,subj))		: ^x.ing(play x);
+played		=	(s(perf)\np(P,N,subj))		: ^x.did(play x);
+% transitive verbs
+%   block
+blocked		=	((s(perf)\np(P,N,subj))/np(P2,N2,obj))	: ^x y.blocked y x;
+%   like
+likes		=	((s(perf)\np(three,sing,subj))/np(P2,N2,obj))	: ^x y.likes y x;
+%   eat
+eat		=	((s(bse)\np(P,N,subj))/np(P2,N2,obj))		: ^x y.eat y x;
+eats		=	((s(fin)\np(three,sing,subj))/np(P2,N2,obj))	: ^x y.eat y x;
+eat		=	((s(fin)\np(two,sing,subj))/np(P2,N2,obj))	: ^x y.eat y x;
+eat		=	((s(fin)\np(one,sing,subj))/np(P2,N2,obj))	: ^x y.eat y x;
+eat		=	((s(fin)\np(P,plu,subj))/np(P2,N2,obj))		: ^x y.eat y x;
+eating		=	((s(pred)\np(P,N,subj))/np(P2,N2,obj))		: ^x y.ing(eat y x);
+ate		=	((s(perf)\np(P,N,subj))/np(P2,N2,obj))		: ^x y.did(eat y x);
+eaten		=	(s(perf)\np(P,N,subj))				: ^x.eaten x;
+%   see
+see		=	((s(bse)\np(P,N,subj))/np(P2,N2,obj))		: ^x y.see y x;
+saw		=	((s(perf)\np(P,N,subj))/np(P2,N2,obj))		: ^x y.did(see y x);
+%   kick
+kick		=	((s(fin)\np(P,N,subj))/np(P2,N2,obj))		: ^x y.kick (C I x y);
+kicks		=	((s(fin)\np(three,sing,subj))/np(P2,N2,obj))	: ^x y.kick y x;
+kick		=	((s(fin)\np(two,sing,subj))/np(P2,N2,obj))	: ^x y.kick (C I x y);
+kick		=	((s(fin)\np(one,sing,subj))/np(P2,N2,obj))	: ^x y.kick y x;
+kick		=	((s(fin)\np(P,N,subj))/np(P2,N2,obj))		: ^x y.kick y x;
+kicked		=	((s(perf)\np(P,N,subj))/np(P2,N2,obj))		: ^x y.did(kick y x);
+kicking		=	((s(pred)\np(P,N,subj))/np(P2,N2,obj))		: ^x y.ing(kick y x);
+%   hold
+holding		=	((s(pred)\np(P,N,subj))/np(P2,N2,obj))		: ^x y.ing(hold y x);
+held		=	((s(perf)\np(P,N,subj))/np(P2,N2,obj))		: ^x y.did(hold y x);
+% transitive verbs with a particle
+put		=	(((s(perf)\np(P,N,subj))/np(P2,N2,obj))/part(Q))	: ^x y z.put x z y;
+% particles
+out		=       part(out)					: out;
+down		=       part(down)					: down;
+up		=       part(up)					: up;
+in		=       part(in)					: in;
+% to
+to		=	to						: to;
+% ditransitive verb
+%   give
+give		=	(((s(fin)\np(P,N,subj))/np(P2,N2,obj))/np(P3,N3,obj))	    : ^x y z.give z y x;
+gave		=	(((s(perf)\np(P,N,subj))/np(P2,N2,obj))/np(P3,N3,obj))	    : ^x y z.gave z y x;
+%   give to
+% superceded by prepositional phrases
+give		=	((((s(fin)\np(P,N,subj))/np(P2,N2,obj))/to)/np(P3,N3,obj))  : ^a b c d.give d b a;
+gave		=	((((s(perf)\np(P,N,subj))/np(P2,N2,obj))/to)/np(P3,N3,obj)) : ^a b c d.did(give d c a);
+% prepositions
+%   post-nominal modifiers of nouns
+in		=	((n(N)\n(N))/np(P,N2,obj))				: ^x y.in y x;
+with		=	((n(N)\n(N))/np(P,N2,obj))				: ^x y.with y x;
+beside		=	((n(N)\n(N))/np(P,N2,obj))				: ^x y.beside y x;
+%   verb modifying
+in		=	(((s(V)\np(P,N,C))\(s(V)\np(P,N,C)))/np(P2,N2,obj))	: ^a b c.in (b c) a;
+to		=	(((s(V)\np(P,N,C))\(s(V)\np(P,N,C)))/np(P2,N2,obj))	: ^a b c.to (b c) a;
+for		=	(((s(V)\np(P,N,C))\(s(V)\np(P,N,C)))/np(P2,N2,obj))	: ^a b c.for (b c) a;
+from		=	(((s(V)\np(P,N,C))\(s(V)\np(P,N,C)))/np(P2,N2,obj))	: ^a b c.from (b c) a;
+like		=	(((s(V)\np(P,N,C))\(s(V)\np(P,N,C)))/np(P2,N2,obj))	: ^a b c.like (b c) a;
+as		=	(((s(V)\np(P,N,C))\(s(V)\np(P,N,C)))/np(P2,N2,obj))	: ^a b c.as (b c) a;
+with		=	(((s(V)\np(P,N,C))\(s(V)\np(P,N,C)))/np(P2,N2,obj))	: ^x y z.with (y z) x;
+beside		=	(((s(V)\np(P,N,C))\(s(V)\np(P,N,C)))/np(P2,N2,obj))	: ^x y z.beside (y z) x;
+%   without np complements
+%     verbs
+inside		=	((s(V)\np(P,N,C))\(s(V)\np(P,N,C)))			: ^x.inside x;
+outside		=	((s(V)\np(P,N,C))\(s(V)\np(P,N,C)))			: ^x.outside x;
+%     nouns
+inside		=	(n(N)\n(N))						: ^x.inside x;
+outside		=	(n(N)\n(N))						: ^x.outside x;
+% auxiliaries
+%   modal & temporal
+did		=	((s(fin)\np(P,N,subj))/(s(bse)\np(P,N,subj)))		      : ^x y.did (x y);
+does		=	((s(fin)\np(three,sing,subj))/(s(bse)\np(three,sing,subj)))   : ^x y.does (x y);
+do		=	((s(fin)\np(three,plu,subj))/(s(bse)\np(three,plu,subj)))     : ^x y.do (x y);
+do		=	((s(fin)\np(two,N,subj))/(s(bse)\np(two,N,subj)))	      : ^x y.do (x y);
+do		=	((s(fin)\np(one,N,subj))/(s(bse)\np(one,N,subj)))	      : ^x y.do (x y);
+%
+will		=	((s(fin)\np(P,N,subj))/(s(bse)\np(P,N,subj)))		      : ^x y.will (x y);
+would		=	((s(fin)\np(P,N,subj))/(s(bse)\np(P,N,subj)))		      : ^x y.would (x y);
+should		=	((s(fin)\np(P,N,subj))/(s(bse)\np(P,N,subj)))		      : ^x y.should (x y);
+might		=	((s(fin)\np(P,N,subj))/(s(bse)\np(P,N,subj)))		      : B might;
+% predicative
+be		=	((s(bse)\np(P,N,subj))/(s(pred)\np(P,N,subj)))			: ^x y.be (x y);
+is		=	((s(fin)\np(three,sing,subj))/(s(pred)\np(three,sing,subj)))	: B is;
+am		=	((s(fin)\np(one,sing,subj))/(s(pred)\np(one,sing,subj)))	: B am;
+are		=	((s(fin)\b np(P,plu,subj))/(s(pred)\np(P,plu,subj)))		: B are;
+are		=	((s(fin)\np(two,sing,subj))/(s(pred)\np(two,sing,subj)))	: B are;
+was		=	((s(fin)\np(one,sing,subj))/(s(pred)\np(one,sing,subj)))	: B was;
+was		=	((s(fin)\np(three,sing,subj))/(s(pred)\np(three,sing,subj)))	: B was;
+were		=	((s(fin)\np(P,plu,subj))/(s(pred)\np(P,plu,subj)))		: B were;
+were		=	((s(fin)\np(two,sing,subj))/(s(pred)\np(two,sing,subj)))	: B were;
+being		=	((s(pred)\np(P,N,subj))/(s(pred)\np(P,N,subj)))			: being;
+been		=	((s(perf)\np(P,N,subj))/(s(pred)\np(P,N,subj)))			: been;
+% perfective
+have		=	((s(bse)\np(P,N,subj))/(s(perf)\np(P,N,subj)))			: have;
+had		=	((s(fin)\np(P,N,subj))/(s(perf)\np(P,N,subj)))			: had;
+has		=	((s(fin)\np(three,sing,subj))/(s(perf)\np(three,sing,subj)))	: have;
+have		=	((s(fin)\np(P,plu,subj))/(s(perf)\np(P,plu,subj)))		: have;
+have		=	((s(fin)\np(two,sing,subj))/(s(perf)\np(two,sing,subj)))	: have;
+have		=	((s(fin)\np(one,sing,subj))/(s(perf)\np(one,sing,subj)))	: ^x y.have (x y);
+% infinitive
+to		=	((s(inf)\np(P,N,subj))/(s(bse)\np(P,N,subj)))			: ^x y.to (x y);
+% negative
+not		=	((s(bse)\np(P,N,C))/(s(bse)\np(P,N,C)))				: B not;
+not		=	((s(perf)\np(P,N,C))/(s(perf)\np(P,N,C)))			: B not;
+not		=	((s(pred)\np(P,N,C))/(s(pred)\np(P,N,C)))			: B not;
+not		=	((s(inf)\np(P,N,C))/(s(inf)\np(P,N,C)))				: B not;
+%%%
+% conjunction
+and		=	((X\X)/X)							: ^x y.and y x;
+but		=	((X\X)/X)							: ^x y.but y x;
+% 
+that		=	((n(N)\n(N))/(s(V)/np(P,N,obj)))				: ^x y.that (S I x y);
+% sentential complement verbs
+know		=	((s(bse)\np(P,N,subj))/s(fin))					: ^x y.know y x;
+believe		=	((s(bse)\np(P,N,subj))/s(fin))					: ^x y.believe y x;
+% complementized sentential complement verbs
+that		=	(s(that)/s(fin))						: ^x.that x;
+that		=	(s(thatb)/s(bse))						: ^x.that x;
+whether		=	(s(whether)/s(fin))						: ^x.whether x;
+%
+believe		=	((s(bse)\np(P,N,subj))/s(that))					: C believe;
+think		=	((s(bse)\np(P,N,subj))/s(that))					: C think;
+know		=	((s(bse)\np(P,N,subj))/s(that))					: B know;
+persuade	=	(((s(bse)\np(P,N,subj))/s(that))/np(P2,N2,obj))			: ^x y z.persuade z x y;
+bet		=	((((s(bse)\np(P,N,subj))/s(that))/np(P2,N2,obj))/np(P3,N3,obj))	: ^x y z w.bet z x y w;
+wonder		=	((s(bse)\np(P,N,subj))/s(whether))				: ^x y.wonder y x;
+prefer		=	((s(bse)\np(P,N,subj))/s(thatb))				: C prefer;
+% prepositions
+for		=	(np(P,N,for)/np(P,N,obj))					: ^x.for x;
+to		=	(np(P,N,to)/np(P,N,obj))					: ^x.to x;
+about		=	(np(P,N,about)/np(P,N,obj))					: ^x.about x;
+of		=	(np(P,N,of)/np(P,N,obj))					: ^x.of x;
+which		=	(np(P,N,which)/np(P,N,obj))					: ^x.which x;
+with		=	(np(P,N,with)/np(P,N,obj))					: ^x.with x;
+% prepositional complement verbs
+approve		=	((s(bse)\np(P,N,subj))/np(P2,N2,of))				: ^x y.approve y x;
+give		=	(((s(bse)\b np(P,N,subj))/np(P2,N2,to))/np(P3,N3,obj))		: ^x y z.give z x y;
+%
+hang		=	(((s(bse)\np(P,N,subj))/np(P2,N2,obj))/part(up))		: ^x y z.hang x z y;
+hang		=	((s(bse)\np(P,N,subj))/part(up))				: ^x y.hang x y;
+% expletive
+it		=	np(three,sing,it)						: it;
+rained		=	(s(fin)\np(three,sing,it))					: ^x.did(rain x);
+be		=	((s(bse)\np(P,N,it))/(s(pred)\np(P,N,it)))			: C be;
+% Control Verbs
+promise		
+= (((s(bse)\np(P,N,subj))/(s(inf)\np(P,N,subj)))/np(P2,N2,obj))	
+: ^x y z.promise z x (y Asubject)
+;
+want		
+= (((s(bse)\np(P,N,subj))/(s(inf)\np(P,N,subj)))/np(P2,N2,obj))	
+: ^x y z.want z x (y Aobject)
+;
+appeal		
+= (((s(bse)\np(P,N,subj))/(s(inf)\np(P,N,subj)))/np(P2,N2,to))	
+: ^x y z.appeal z x (y (Sremoveto Aobject))
+;
+tend		
+= ((s(bse)\np(P,N,subj))/(s(inf)\np(P,N,subj)))
+: ^x y.tend y (x Asubject)
+;
+tend		
+= ((s(bse)\np(P,N,it))/(s(inf)\np(P,N,it)))			
+: ^x y.tend y (x Asubject)
+;
+seem		
+= (((s(bse)\np(P,N,subj))/(s(inf)\np(P,N,subj)))/np(P2,N2,to))
+: ^x y z.seem z x (y (Sremoveto Aobject))
+;
+seem		
+= (((s(bse)\np(P,N,it))/(s(inf)\np(P,N,it)))/np(P2,N2,to))	
+: ^x y z.seem z x (y (Sremoveto Aobject))
+;
+believe		
+= (((s(bse)\np(P,N,subj))/(s(inf)\np(P2,N2,it)))/np(P2,N2,it))	
+: ^x y z.believe z x (y Aobject)
+;
+believe		
+= (((s(bse)\np(P,N,subj))/(s(inf)\np(P2,N2,subj)))/np(P2,N2,obj))	
+: ^x y z.believe z x (y Aobject)
+;
+want		
+= (((s(bse)\np(P,N,subj))/(s(inf)\np(P2,N2,it)))/np(P2,N2,it))
+: ^x y z.want z x (y Aobject)
+;
+want		
+= (((s(bse)\np(P,N,subj))/(s(inf)\np(P2,N2,subj)))/np(P2,N2,obj))
+: ^x y z.want z x (y Aobject)
+;
+% verbs that take adjectival complements
+appear		=	((s(bse)\np(P,N,subj))/(n(N)/n(N)))			: ^x y.appear y (x Asubject);
+look		=	((s(bse)\np(P,N,subj))/(n(N)/n(N)))			: ^x y.look y (x Asubject);
+appear		=	(((s(bse)\np(P,N,subj))/np(P2,N2,to))/(n(N)/n(N)))	: ^x y z.appear z y (x Asubject);
+look		=	(((s(bse)\np(P,N,subj))/np(P2,N2,to))/(n(N)/n(N)))	: ^x y z.look z y (x Asubject);
+% lexical predicatives
+angry		=	((s(pred)\np(P,N,subj))/np(P2,N2,about))		: ^x y.angry y x;
+afraid		=	((s(pred)\np(P,N,subj))/s(that))			: ^x y.afraid y x;
+insistent	=	((s(pred)\np(P,N,subj))/s(thatb))			: ^x y.insistent y x;
+eager		=	((s(pred)\np(P,N,subj))/(s(inf)\np(P,N,subj)))		: ^x y.eager y x;
+% sentential adverbials
+because		=	(((s(V)\np(P,N,subj))\(s(V)\np(P,N,subj)))/s(fin))	: ^x y z.because z (y Asubject) x;
+while		=	(((s(V)\np(P,N,subj))\(s(V)\np(P,N,subj)))/s(fin))	: ^x y z.while z (y Asubject) x;
+after		=	(((s(V)\np(P,N,subj))\(s(V)\np(P,N,subj)))/s(fin))	: ^x y z.after z (y Asubject) x;
+if		=	(((s(V)\np(P,N,subj))\(s(V)\np(P,N,subj)))/s(fin))	: ^x y z.if z (y Asubject) x;
+% control adverbials
+while		
+= (((s(V)\np(P,N,subj))\(s(V)\np(P,N,subj)))/(s(pred)\np(P,N,subj)))
+: ^x y z.while z (y Asubject) (x Asubject)
+;
+before
+= (((s(V)\np(P,N,subj))\(s(V)\np(P,N,subj)))/(s(pred)\np(P,N,subj)))
+: ^x y z.before z (y Asubject) (x Asubject)
+;
+to
+= s(V)\np(P,N,subj)\(s(V)\np(P,N,subj))/(s(bse)\np(P,N,subj))
+: ^x y z.to z (y Asubject) (x Asubject)
+;
+%with
+%= s(V)\np(P,N,subj)\(s(V)\np(P,N,subj))/(s(pred)\np(P2,N2,subj))/np(P2,N2,obj)
+%: ^w x y z.with (y z) (x w)
+%;
+% complementized nouns
+love		 =	n(sing)/np(P,N,of)			: ^x.love x;
+argument	 =	n(sing)/np(P,N,about)/np(P2,N2,with)	: ^x y.argument x y; 
+gift		 =	n(sing)/np(P,N,to)/np(P2,N2,of)		: ^x y.gift x y; 
+belief		 =	n(sing)/s(that)				: ^x.belief x;
+request		 =	n(sing)/s(thatb)			: ^x.request x;
+%%% don't know about plan
+plan		 =	n(sing)/(s(inf)\np(P,sing,subj))	: ^x.plan x; 
+% possessive
+'s		 =	np(three,N,C)/n(N)\np(P2,N2,obj)	: ^x y.possessive x y;
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% testing association
+blush		=	s(fin)\np(P,N,subj)			: ^x.blush x;
+throw		=	s(fin)\np(P,N,subj)/np(P2,N2,obj)	: ^x y.throw y x;
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Viv's addition
+%in		=	((s(V)/s(V))/np(P2,N2,obj))	: ^a b.in b a;
+to		=	(s(inf)/(s(bse)\np(P,N,subj)))           			: ^x.x Ainfinitive;
+%
+is		=	((s(fin)\s(inf))/(n(N)/n(N)))					: ^x y.is y (x Asubject);
+is		=	((s(fin)\np(three,sing,subj))/(n(N)/n(N)))			: ^x y.is y (x Asubject);
+is		=	((s(fin)\np(three,sing,subj))/np(three,sing,subj))		: ^x y.is y x; 
+is		=	((s(fin)\s(pred))/np(three,sing,subj))				: C is;
+is		=	((s(fin)\(s(pred)\np(P,N,subj)))/(n(N)/n(N)))			: ^x y.is (y Asubject) (x Asubject);
+are		=	((s(fin)\np(P,plu,subj))/(n(N)/n(N)))				: ^x y.is y (x Asubject);
+are		=	((s(fin)\np(P,plu,subj))/np(P,plu,subj))			: ^x y.is y x; 
+are		=	(s(fin)\np(P,plu,subj))						: ^x.is x Asubject; 
+are		=	((s(fin)\(s(pred)\np(P,N,subj)))/(n(N)/n(N)))			: ^x y.is (y Asubject) (x Asubject);
+am		=	((s(fin)\np(one,sing,subj))/(n(N)/n(N)))			: ^x y.is y (x Asubject);
+am		=	((s(fin)\np(one,sing,subj))/np(three,sing,subj))		: C am;
+am		=	(s(fin)\np(one,sing,subj))					: ^x.is x Asubject;
+was		=	((s(fin)\np(one,sing,subj))/(n(N)/n(N)))			: ^x y.was(is y (x Asubject));
+was		=	((s(fin)\np(one,sing,subj))/np(three,sing,subj))		: ^x y.was(is y x);
+%
+%%%%%that		=	(np(P,N,C)/s(fin))						: ^x.that x;
+mean		=	((s(bse)\np(P,N,subj))/s(fin))		: ^x y.mean y x;
+%
+home		=	loc					: home;
+away		=	loc					: away;
+here		=	loc					: here;
+there		=	loc					: there;
+%
+run		=	((s(fin)\np(one,N,subj))/loc)		: ^x y.run y x;
+run		=	((s(fin)\np(two,N,subj))/loc)		: ^x y.run y x;
+run		=	((s(fin)\np(three,plu,subj))/loc)	: ^x y.run y x;
+runs		=	((s(fin)\np(three,sing,subj))/loc)	: ^x y.run y x;
+running		=	((s(pred)\np(P,N,subj))/loc)		: ^x y.ing(run y x);
+%%ran		=	((s(perf)\np(P,N,subj))/loc)		: ^x y.did(run y x);
+%
+go		=	((s(fin)\np(one,N,subj))/loc)		: ^x y.go y x;
+go		=	((s(fin)\np(two,N,subj))/loc)		: ^x y.go y x;
+go		=	((s(fin)\np(three,plu,subj))/loc)	: ^x y.go y x;
+goes		=	((s(fin)\np(three,sing,subj))/loc)	: ^x y.go y x;
+%
+when		=	((s(fin)/s(fin))/s(fin))		: ^x y.when y x;
+when		=	((s(fin)/s(fin))\s(fin))		: ^x y.when x y;
+%
+can		=	((s(fin)\np(P,N,subj))/(s(bse)\np(P,N,subj)))		      : B can;
+%%%
+% 01 12 2020
+club		=	n(sing)				: club;
+clubs		=	n(plu)				: clubs;
+%
+%   putt
+putt		=	(s(bse)\np(P,N,subj))		: ^x.putt x;
+putts		=	(s(fin)\np(three,sing,subj))	: ^x.putt x;
+putt		=	(s(fin)\np(two,N,subj))		: ^x.putts x;
+putt		=	(s(fin)\np(one,N,subj))		: ^x.putts x;
+putt		=	(s(fin)\np(P,plu,subj))		: ^x.putts x;
+putting		=	(s(pred)\np(P,N,subj))		: ^x.ing(putt x);
+putted		=	(s(perf)\np(P,N,subj))		: ^x.did(putt x);
+%
+with		=	s(V)\s(V)\np(P,N,subj)		: ^x y.with y x;
