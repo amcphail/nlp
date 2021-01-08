@@ -1,3 +1,7 @@
 This is a Natural Language Parser that is compiled on 64 bit Ubuntu.
 
 It is a publically available prototype from OM Consulting Limited's Korero suite.
+
+If you wish to use a different lexicon, merely backup "english.txt" and rename or link your lexicon to "english.txt."
+
+If I get enough gripes I can change the executable so it takes the lexicon file as an argument.
