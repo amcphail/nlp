@@ -1,0 +1,41 @@
+% Pronouns
+she		=	np(three,sing,subj)		: she;
+% Possessive pronouns
+her		=	(np(three,N,C)/n(N))		: ^x.her x;
+% nouns
+sound		=	n(sing)				: sound;
+mind		=	n(sing)				: mind;
+dash		=	n(sing)				: dash;
+door		=	n(sing)				: door;
+% determiners
+no		=	(np(three,N,C)/n(N)	)	: ^x.no x;
+the		=	(np(three,N,C)/n(N))		: ^x.the x;
+% transitive verbs
+made		=	((s(perf)\np(P,N,subj))/np(P2,N2,obj))	: ^x y.made (y x);
+% prepositions
+for		=	((np(P,N,obj)\np(P,N,obj))/np(P,N,obj))	: ^x y.for x y;
+up		=	(np(P,N,obj)/np(P,N,obj))	: ^x.up x;
+% conjunctions
+comma		=	((X\X)/X)			: ^x y.and y x;
+and		=	((X\X)/X)			: ^x y.and y x;
+oxcomma		=	((X\X)/(X\X))			: ^x y.x y;
+%
+% Syllepsis: She made no sound, up her mind, and the dash for the door.
+%
+% $ ./nlp
+% sentence? no sound
+% -> (np(three,sing,C),no sound)
+% sentence? up her mind
+% -> (np(three,sing,obj),up(her mind))
+% sentence? the dash for the door
+% -> (np(three,sing,obj),for(the door)(the dash))
+% sentence? she made no sound
+% -> (s(perf),made(she(no sound)))
+% sentence? she made up her mind
+% -> (s(perf),made(she(up(her mind))))
+% sentence? she made the dash for the door
+% -> (s(perf),made(she(for(the door)(the dash))))
+% sentence? she made no sound comma up her mind oxcomma and the dash for the door
+% -> (s(perf),and(and(made(she(no sound)))(made(she(up(her mind)))))(made(she(for(the door)(the dash)))))
+% sentence? quit
+% $
